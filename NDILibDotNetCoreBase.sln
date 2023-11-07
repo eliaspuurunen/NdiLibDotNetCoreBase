@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NDILibDotNetCoreBase", "NDILibDotNetCoreBase.csproj", "{805E5429-D28A-4AC5-9B6A-690F1A219C7C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{805E5429-D28A-4AC5-9B6A-690F1A219C7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{805E5429-D28A-4AC5-9B6A-690F1A219C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{805E5429-D28A-4AC5-9B6A-690F1A219C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{805E5429-D28A-4AC5-9B6A-690F1A219C7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {817CF9A5-BA1F-43CF-8C26-2341FF8DE236}
+	EndGlobalSection
+EndGlobal

@@ -4,6 +4,9 @@ This library provides a wrapper to the NDI libraries for Windows, macOS, and eve
 
 ![GitHub](https://img.shields.io/github/license/eliaspuurunen/NdiLibDotNetCoreBase) ![Nuget](https://img.shields.io/nuget/v/NDILibDotNetCoreBase)
 
+Install via dotnet:
+`dotnet add package NDILibDotNetCoreBase --version 2023.11.7.3`
+
 Projects this library is used by:
 - [Tractus Multiview for NDI](https://multiviewforndi.com/)
 - [Elias' NDI Utiliites](https://agfinn.gumroad.com/)

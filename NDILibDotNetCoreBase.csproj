@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Title>NDI Wrapper for .NET Core</Title>
-    <Version>2023.12.20.1</Version>
+    <Version>2023.12.20.2</Version>
     <Description>Provides a wrapper to the NDI libraries for Windows, macOS, and Linux.</Description>
     <PackageProjectUrl>https://github.com/eliaspuurunen/NdiLibDotNetCoreBase</PackageProjectUrl>
     <PackageIcon>logo.png</PackageIcon>
@@ -13,10 +13,14 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>ndi, network device interface</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="README.md" />
+    <None Include="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 	<ItemGroup>

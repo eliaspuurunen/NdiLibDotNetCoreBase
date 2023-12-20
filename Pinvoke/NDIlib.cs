@@ -40,9 +40,56 @@ public static partial class NDIlib
 		NativeLibrary.SetDllImportResolver(typeof(NDIlib).Assembly, ResolveDllImport);
 	}
 
+    public static string GetRuntimeIdentifier() 
+    {
+        var arch = "unknown";
+        switch(RuntimeInformation.ProcessArchitecture)
+        {
+            case Architecture.X86: 
+                arch = "x86";
+                break;
+            case Architecture.X64:
+                arch = "x86-64";
+                break;
+            case Architecture.Arm:
+                arch = "arm32";
+                break;
+            case Architecture.Arm64:
+                arch = "arm64";
+                break;
+            case Architecture.Wasm:
+                arch = "wasm";
+                break;
+            default:
+                arch = RuntimeInformation.ProcessArchitecture.ToString();
+                break;
+        }
+
+        var platform = "unknown";
+        if(RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            platform = "win";
+        }
+        else if(RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+        {
+            platform = "osx";
+        }
+        else if(RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+        {
+            platform = "linux";
+        }
+        else if(RuntimeInformation.IsOSPlatform(OSPlatform.FreeBSD))
+        {
+            platform = "freebsd";
+        }
+
+        return $"{platform}-{arch}";
+    }
+
 	private static nint ResolveDllImport(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
 	{
 		var libName = string.Empty;
+        var useAlternateLoadLogic = false;
 
 		if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 		{
@@ -61,7 +108,8 @@ public static partial class NDIlib
 		}
 		else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
 		{
-			throw new NotImplementedException("Linux support not yet ready.");
+            useAlternateLoadLogic = true;
+			libName = "libndi.so";
 		}
 		else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
 		{
@@ -72,7 +120,22 @@ public static partial class NDIlib
 			throw new NotImplementedException($"{RuntimeInformation.OSDescription} not supported.");
 		}
 
-		NativeLibrary.TryLoad(libName, out var handle);
+        var handle = nint.Zero;
+
+        if(useAlternateLoadLogic)
+        {
+            var libPath = Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory,
+                libName
+            );
+
+            NativeLibrary.TryLoad(libPath, out handle);
+        }
+        else
+        {
+    		NativeLibrary.TryLoad(libName, out handle);
+        }
+
 
 		return handle;
     }

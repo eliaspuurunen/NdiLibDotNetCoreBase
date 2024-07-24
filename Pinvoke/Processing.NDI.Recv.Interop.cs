@@ -207,6 +207,17 @@ namespace NewTek
                 return UnsafeNativeMethods.recv_capture_v3_32(p_instance, ref p_video_data, ref p_audio_data, ref p_metadata, timeout_in_ms);
         }
 
+        public unsafe static frame_type_e recv_capture_v3(
+			IntPtr p_instance,
+			video_frame_v2_t* p_video_data,
+			audio_frame_v3_t* p_audio_data,
+			metadata_frame_t* p_metadata,
+			int timeout_in_ms)
+        {
+            return UnsafeNativeMethods.recv_capture_v3_64_unsafe(p_instance, p_video_data, p_audio_data, p_metadata, timeout_in_ms);
+        }
+
+
         // Free the buffers returned by capture for video
         public static void recv_free_video_v2(IntPtr p_instance, ref video_frame_v2_t p_video_data)
 		{
@@ -367,6 +378,18 @@ namespace NewTek
             // recv_capture_v3 
             [DllImport(LibraryName, EntryPoint = "NDIlib_recv_capture_v3", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
             internal static extern frame_type_e recv_capture_v3_64(IntPtr p_instance, ref video_frame_v2_t p_video_data, ref audio_frame_v3_t p_audio_data, ref metadata_frame_t p_metadata, UInt32 timeout_in_ms);
+
+            // recv_capture_v3 
+            [DllImport(LibraryName, EntryPoint = "NDIlib_recv_capture_v3", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
+            internal unsafe static extern frame_type_e recv_capture_v3_64_unsafe(
+                IntPtr p_instance,
+                video_frame_v2_t* p_video_data,
+                audio_frame_v3_t* p_audio_data,
+                metadata_frame_t* p_metadata,
+                int timeout_in_ms);
+
+
+
             [DllImport(LibraryName, EntryPoint = "NDIlib_recv_capture_v3", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
             internal static extern frame_type_e recv_capture_v3_32(IntPtr p_instance, ref video_frame_v2_t p_video_data, ref audio_frame_v3_t p_audio_data, ref metadata_frame_t p_metadata, UInt32 timeout_in_ms);
 

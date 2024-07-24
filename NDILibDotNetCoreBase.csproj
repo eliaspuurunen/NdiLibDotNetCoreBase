@@ -1,11 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Title>NDI Wrapper for .NET Core</Title>
-    <Version>2023.12.20.2</Version>
+    <Version>2024.7.22.1</Version>
     <Description>Provides a wrapper to the NDI libraries for Windows, macOS, and Linux.</Description>
     <PackageProjectUrl>https://github.com/eliaspuurunen/NdiLibDotNetCoreBase</PackageProjectUrl>
     <PackageIcon>logo.png</PackageIcon>
@@ -14,6 +14,7 @@
     <PackageTags>ndi, network device interface</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,11 +23,6 @@
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Include="NAudio" Version="2.1.0" />
-		<PackageReference Include="Serilog" Version="2.12.0" />
-	</ItemGroup>
 
 	<ItemGroup>
 	  <None Update="logo.png">

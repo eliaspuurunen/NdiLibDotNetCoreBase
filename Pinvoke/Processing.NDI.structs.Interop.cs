@@ -47,28 +47,31 @@ namespace NewTek
 
 		public enum FourCC_type_e
 		{
-			// YCbCr color space
-			FourCC_type_UYVY = 0x59565955,
+            FourCC_type_UYVY = 0x59565955,
 
             // 4:2:0 formats
             NDIlib_FourCC_video_type_YV12 = 0x32315659,
             NDIlib_FourCC_video_type_NV12 = 0x3231564E,
             NDIlib_FourCC_video_type_I420 = 0x30323449,
 
-			// BGRA
-			FourCC_type_BGRA = 0x41524742,
-			FourCC_type_BGRX = 0x58524742,
+            // BGRA
+            FourCC_type_BGRA = 0x41524742,
+            FourCC_type_BGRX = 0x58524742,
 
-			// RGBA
-			FourCC_type_RGBA = 0x41424752,
-			FourCC_type_RGBX = 0x58424752,
+            // RGBA
+            FourCC_type_RGBA = 0x41424752,
+            FourCC_type_RGBX = 0x58424752,
 
-			// This is a UYVY buffer followed immediately by an alpha channel buffer.
-			// If the stride of the YCbCr component is "stride", then the alpha channel
-			// starts at image_ptr + yres*stride. The alpha channel stride is stride/2.
-			FourCC_type_UYVA = 0x41565955,
+            // P216/PA16
+            FourCC_type_P216 = 0x36313250,
+            FourCC_type_PA16 = 0x36314150,
 
-			FourCC_type_ex_H264_highest_bandwidth = 875967048
+            // This is a UYVY buffer followed immediately by an alpha channel buffer.
+            // If the stride of the YCbCr component is "stride", then the alpha channel
+            // starts at image_ptr + yres*stride. The alpha channel stride is stride/2.
+            FourCC_type_UYVA = 0x41565955,
+
+            FourCC_type_ex_H264_highest_bandwidth = 875967048
         }
 
 		public enum frame_format_type_e

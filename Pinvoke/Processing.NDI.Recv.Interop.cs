@@ -67,8 +67,10 @@ namespace NewTek
 			// Read the SDK documentation to understand the pros and cons of this format.
 			recv_color_format_fastest = 100,
 
-			// Legacy definitions for backwards compatibility
-			recv_color_format_e_BGRX_BGRA = recv_color_format_BGRX_BGRA,
+            NDIlib_recv_color_format_best = 101,
+
+            // Legacy definitions for backwards compatibility
+            recv_color_format_e_BGRX_BGRA = recv_color_format_BGRX_BGRA,
 			recv_color_format_e_UYVY_BGRA = recv_color_format_UYVY_BGRA,
 			recv_color_format_e_RGBX_RGBA = recv_color_format_RGBX_RGBA,
 			recv_color_format_e_UYVY_RGBA = recv_color_format_UYVY_RGBA

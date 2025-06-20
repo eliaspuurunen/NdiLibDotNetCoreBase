@@ -42,8 +42,9 @@ namespace NewTek
 			// For instamce, this value will be returned from NDIlib_recv_capture_v2 and NDIlib_recv_capture
 			// when the device is known to have new settings, for instance the web-url has changed ot the device
 			// is now known to be a PTZ camera.
-			frame_type_status_change = 100
-		}
+			frame_type_status_change = 100,
+            frame_type_source_change = 101,
+        }
 
 		public enum FourCC_type_e
 		{

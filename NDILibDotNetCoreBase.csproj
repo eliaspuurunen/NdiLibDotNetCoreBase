@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Title>NDI Wrapper for .NET Core</Title>
-    <Version>2024.7.22.1</Version>
+    <Version>2025.6.18.1</Version>
     <Description>Provides a wrapper to the NDI libraries for Windows, macOS, and Linux.</Description>
     <PackageProjectUrl>https://github.com/eliaspuurunen/NdiLibDotNetCoreBase</PackageProjectUrl>
     <PackageIcon>logo.png</PackageIcon>

@@ -1,11 +1,11 @@
-# NDI® C# Wrapper for .NET 7 (.NET Core)
+# NDI® C# Wrapper for .NET (.NET Core)
 
 This library provides a wrapper to the NDI libraries for Windows, macOS, and Linux.
 
 ![GitHub](https://img.shields.io/github/license/eliaspuurunen/NdiLibDotNetCoreBase) ![Nuget](https://img.shields.io/nuget/v/NDILibDotNetCoreBase)
 
 Install via dotnet:
-`dotnet add package NDILibDotNetCoreBase --version 2023.11.7.3`
+`dotnet add package NDILibDotNetCoreBase`
 
 Projects this library is used by:
 - [Tractus Multiview for NDI](https://multiviewforndi.com/)

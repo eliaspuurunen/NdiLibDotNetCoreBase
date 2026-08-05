@@ -1,3 +1,7 @@
+# NOTE: THIS PROJECT IS DEPRECATED!
+
+The recommended replacement is available here: https://github.com/tractusevents/NdiLibDotNetAdvanced
+
 # NDI® C# Wrapper for .NET (.NET Core)
 
 This library provides a wrapper to the NDI libraries for Windows, macOS, and Linux.

@@ -21,5 +21,6 @@ NDI® is a registered trademark of Vizrt.
 
 ### Linux Notes
 
-`libndi.so` is searched for in the app launch path. Make sure the correct library for your platform is copied there.
+`libndi.so` is searched for in the `PATH` environment variable and the app launch path.
+If the SDK is not installed correctly, it might be necessary to copy / link `libndi.so` to the app launch path.
 

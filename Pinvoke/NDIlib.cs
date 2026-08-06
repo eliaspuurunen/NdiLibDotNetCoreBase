@@ -88,8 +88,8 @@ public static partial class NDIlib
 
 	private static nint ResolveDllImport(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
 	{
-		var libName = string.Empty;
-        var useAlternateLoadLogic = false;
+		string libName;
+		var useAlternateLoadLogic = false;
 
 		if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 		{
@@ -108,7 +108,7 @@ public static partial class NDIlib
 		}
 		else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
 		{
-            useAlternateLoadLogic = true;
+			useAlternateLoadLogic = true;
 			libName = "libndi.so";
 		}
 		else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
@@ -120,24 +120,27 @@ public static partial class NDIlib
 			throw new NotImplementedException($"{RuntimeInformation.OSDescription} not supported.");
 		}
 
-        var handle = nint.Zero;
+        nint handle;
 
-        if(useAlternateLoadLogic)
+        if (NativeLibrary.TryLoad(libName, out handle))
+        {
+            return handle;
+        }
+
+        if (useAlternateLoadLogic)
         {
             var libPath = Path.Combine(
                 AppDomain.CurrentDomain.BaseDirectory,
                 libName
             );
 
-            NativeLibrary.TryLoad(libPath, out handle);
-        }
-        else
-        {
-    		NativeLibrary.TryLoad(libName, out handle);
+            if (NativeLibrary.TryLoad(libPath, out handle))
+            {
+                return handle;
+            }
         }
 
-
-		return handle;
+        return nint.Zero;
     }
 } // namespace NewTek
 
